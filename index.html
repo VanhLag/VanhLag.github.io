@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phan Việt Anh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Hiệu ứng fade-in cho container */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            opacity: 0; /* Bắt đầu từ mờ */
+            animation: fadeIn 1.5s forwards; /* Áp dụng animation */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px); /* Bắt đầu từ vị trí thấp hơn */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* Kết thúc tại vị trí ban đầu */
+            }
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .chaomung {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            padding: 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .section a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .section a:hover {
+            color: #388E3C;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 30px;
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            header {
+                font-size: 1.3rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .section ul li {
+                font-size: 1rem;
+            }
+            footer {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .chaomung h2 {
+                font-size: 1.3rem;
+            }
+            .section ul li {
+                font-size: 0.9rem;
+            }
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Phan Viet Anh's Profile</h1>
+    <p>Trang web này được viết bởi Phan Việt Anh</p>
+</header>
+
+<div class="container">
+    <div class="chaomung">
+        <h2>Chào mừng cậu đã đến tới thế giới của tôi</h2>
+        <p>Nơi đây sẽ là những thông tin cơ bản về tôi nếu bạn muốn làm quen tôi</p>
+    </div>
+    <section class="section" id="cailon">
+        <h2>Giới Thiệu</h2>
+        <ul>
+            <li><strong>Tên: </strong>Phan Việt Anh</li>
+            <li><strong>Ngày Sinh: </strong>29/09/2007</li>
+            <li><strong>Sống ở: </strong>Thành phố Biên Hoà, Tỉnh Đồng Nai</li>
+            <li><strong>Hiện Tại Là: </strong>Học sinh lớp 12</li>
+            <li><strong>Sở thích cá nhân: </strong>Chơi game, Học toán lý anh, Code vài thứ nhảm nhảm, Và đánh đàn</li>
+        </ul>
+    </section>
+    <section class="section" id="concac">
+        <h2>Lời tâm sự nho nhỏ</h2>
+        <p>Tôi rất vui khi bạn đã nhấn vào cái link tôi để ở bio fb, vì đây là những gì tôi muốn giới thiệu với bạn trước khi bạn làm quen tôi</p>
+        <p>Nói về mảng âm nhạc thì tôi thích nhạc của <a href="https://vietcetera.com/vn/hustlang-robe-ban-linh-va-trach-nhiem-cua-mot-thuyen-truong" target="_blank">Hustlang Robber</a> vì nhạc ổng đã truyền cảm hứng cho tôi tiếp tục sống đến giờ</p>
+        <p>--------------------------------------------------------</p>
+        <p>Tôi đôi lúc sẽ cọc tính, nói năng vô cớ, mồm đi chơi hơi xa, như "đến tháng" vậy, bạn thông cảm cho tôi nhé</p>
+        <p>--------------------------------------------------------</p>
+        <p>Tính tôi dễ gần, có lối sống tích cực, nên rất thoải mái với mọi người</p>
+        <p>Tuy là vậy nhưng tôi vẫn có những lúc tiêu cực, suy sụp, thoái hoá tinh thần</p>
+        <p>Nhưng tôi có thể tự an ủi bản thân được, nếu bạn muốn an ủi tôi thì tôi cũng sẽ nghe >///< </p>
+        <p>Trong trường hợp bạn buồn vì một chuyện gì đó, thì có thể nói với tôi, tôi sẽ an ủi bạn nhé</p>
+        <p>--------------------------------------------------------</p>
+        <p>Tạm chỉ có thế thôi tại tôi bí quá nên nói ra những gì tôi đang gặp phải thôi nên cảm ơn bạn đã đọc</p>
+        <p>Chúc bạn có khoảng thời gian vui vẻ khi nói chuyện với tôi</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Phan Việt Anh.</p>
+</footer>
+
+</body>
+</html>
