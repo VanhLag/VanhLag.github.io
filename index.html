@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Phan Việt Anh</title>
     <style>
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,35 +28,37 @@
             position: relative;
         }
 
-        header, footer {
-            background-color: rgba(76, 175, 80, 0.9);
-            color: white;
+        footer {
+            background-color: rgba(255, 255, 255, 0.7);
             padding: 20px 0;
             text-align: center;
             font-size: 1.5rem;
-            border-bottom: 2px solid #fff;
             transition: background-color 0.3s ease;
+            position: relative;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
+        footer:hover {
+            background-color: rgba(180, 168, 168, 0.8);
         }
 
-        header:hover, footer:hover {
-            background-color: rgba(76, 175, 80, 1);
+        footer p {
+            color: black;
         }
 
         .container {
-            width: 80%;
+            width: 40%;
             margin: 20px auto;
             padding: 30px;
-            background-color: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.507);
+            box-shadow: 0 4px 20px rgba(22, 18, 18, 0.842);
             border-radius: 8px;
             opacity: 0;
+            transition: background-color 0.3s ease;
             animation: fadeIn 1.5s forwards;
-            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .container:hover {
+            background-color: rgba(223, 213, 213, 0.8);
         }
 
         @keyframes fadeIn {
@@ -54,6 +66,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -61,7 +74,7 @@
         }
 
         h2 {
-            color: #4CAF50;
+            color: #4d7cda;
             margin-bottom: 10px;
         }
 
@@ -93,19 +106,20 @@
         }
 
         .section a {
-            color: #4CAF50;
+            color: #4d7cda;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .section a:hover {
-            color: #388E3C;
+            color: #4c6ba8;
+            font-weight: bold;
         }
 
         footer {
             text-align: center;
             padding: 15px;
-            background-color: rgba(76, 175, 80, 0.9);
+            background-color: rgba(255, 255, 255, 0.7);
             color: white;
             margin-top: 30px;
             font-size: 1rem;
@@ -113,7 +127,7 @@
         }
 
         footer:hover {
-            background-color: rgba(76, 175, 80, 1);
+            background-color: rgba(180, 168, 168, 0.8);
         }
 
         @media (max-width: 768px) {
@@ -121,15 +135,19 @@
                 width: 90%;
                 padding: 20px;
             }
+
             header {
                 font-size: 1.3rem;
             }
+
             h2 {
                 font-size: 1.5rem;
             }
+
             .section ul li {
                 font-size: 1rem;
             }
+
             footer {
                 font-size: 0.9rem;
             }
@@ -139,23 +157,26 @@
             header h1 {
                 font-size: 1.5rem;
             }
+
             .chaomung h2 {
                 font-size: 1.3rem;
             }
+
             .section ul li {
                 font-size: 0.9rem;
             }
+
             footer {
                 font-size: 0.8rem;
             }
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Phan Việt Anh's Profile</h1>
-    </header>
 
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="pva.mp4" type="video/mp4">
+    </video>
     <div class="container">
         <div class="chaomung">
             <h2>Chào mừng cậu đã đến tới thế giới của tôi</h2>
@@ -164,50 +185,75 @@
         <section class="section" id="gioithieu">
             <h2>Giới Thiệu</h2>
             <ul>
-                <li><strong>Tên : </strong>Phan Việt Anh</li>
-                <li><strong>Ngày Sinh : </strong>29/09/2007</li>
-                <li><strong>Sống ở : </strong>Thành phố Biên Hoà, Tỉnh Đồng Nai</li>
-                <li><strong>Hiện Tại Là : </strong>Học sinh lớp 12</li>
-                <li><strong>Sở thích cá nhân : </strong>Chơi game, Học toán lý anh, Code vài thứ nhảm nhảm, Và đánh đàn</li>
+                <li><strong>Tên: </strong>Phan Việt Anh</li>
+                <li><strong>Ngày Sinh: </strong>29/09/2007</li>
+                <li><strong>Sống ở: </strong>Thành phố Biên Hoà, Tỉnh Đồng Nai</li>
+                <li><strong>Hiện Tại Là: </strong>Học sinh lớp 12</li>
+                <li><strong>Sở thích cá nhân: </strong>Chơi game, Học toán, Code vài thứ nhảm nhảm, Nấu ăn, Và đánh đàn
+                </li>
             </ul>
         </section>
         <section class="section" id="mxh">
             <h2>Mạng Xã Hội</h2>
             <ul>
-                <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/512px-2021_Facebook_icon.svg.png" alt="Icon"> <strong>Facebook :</strong> <a href="https://www.facebook.com/knight.so.bad">Phan Việt Anh</a></li>
-                <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/640px-Instagram_icon.png" alt="Icon"> <strong>Instagram : </strong> <a href="https://www.instagram.com/_pva.thedeath/">_pva.thedeath</a></li>
-                <li><img src="https://cdn-icons-png.flaticon.com/512/145/145809.png" alt="Icon"> <strong>Soundcloud : </strong> <a href="https://soundcloud.com/phan-vi-t-anh-620389200">Kn1ghT</a></li>
-                <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/2048px-Icon_of_Zalo.svg.png" alt="Icon"> <strong>Zalo : </strong> Phan Việt Anh ( 0933433957 )</li>
+                <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/512px-2021_Facebook_icon.svg.png"
+                        alt="Icon"><strong>Facebook:</strong> <a href="https://www.facebook.com/knight.so.bad"> Phan
+                        Việt Anh</a></li>
+                <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/640px-Instagram_icon.png"
+                        alt="Icon"> <strong>Instagram: </strong> <a
+                        href="https://www.instagram.com/_pva.thedeath/">_pva.thedeath</a></li>
+                <li><img src="https://cdn-icons-png.flaticon.com/512/145/145809.png" alt="Icon">
+                    <strong>Soundcloud:</strong> <a href="https://soundcloud.com/phan-vi-t-anh-620389200">Kn1ghT</a>
+                </li>
+                <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/2048px-Icon_of_Zalo.svg.png"
+                        alt="Icon"> <strong>Zalo:</strong> Phan Việt Anh (0933433957)</li>
             </ul>
         </section>
         <section class="section" id="game">
-            <h2>Các game đang chơi</h2>
+            <h2>Game</h2>
             <ul>
-                <li><img src="https://cdn.tgdd.vn/2020/03/GameApp/1200x630wa-200x200.jpg" alt="Icon"> <strong>Liên Quân : </strong > Hustlang Vanh</li>
-                <li><img src="https://play-lh.googleusercontent.com/a7R5nyeaX8lIEWdBOxjlvbyq9LcFwh3XMvNtBPEKR3LPGgdvgGrec4sJwn8tUaaSkw=s256-rw" alt="Icon"> <strong>Chess.com : </strong> <a href="https://www.chess.com/member/phanvanh18">PhanVanh18</a></li>
-                <li><img src="https://img.tapimg.net/market/icons/6eec2753e35ac1761375fce36a61ed20_360.png?imageMogr2/thumbnail/1080x9999%3E/quality/80/format/jpg/interlace/1/ignore-error/1&t=1" alt="Icon"> <strong>TFT : </strong> <a href="https://lolchess.gg/profile/vn/L%C3%A3ng%20T%E1%BB%AD%20Bi%C3%AAn%20Ho%C3%A0-2909/set13">Lãng Tử Biên Hoà#2909</a></li>
-                <li><img src="https://cdn2.steamgriddb.com/icon/e1bd06c3f8089e7552aa0552cb387c92/32/512x512.png" alt="Icon"> <strong>CS2 : </strong><a href="https://steamcommunity.com/id/pvathedeath/">Kn1ghT</a></li>
+                <li><img src="https://cdn.tgdd.vn/2020/03/GameApp/1200x630wa-200x200.jpg" alt="Icon"> <strong>Liên
+                        Quân:</strong> Hustlang Vanh</li>
+                <li><img src="https://play-lh.googleusercontent.com/a7R5nyeaX8lIEWdBOxjlvbyq9LcFwh3XMvNtBPEKR3LPGgdvgGrec4sJwn8tUaaSkw=s256-rw"
+                        alt="Icon"> <strong>Chess.com:</strong> <a
+                        href="https://www.chess.com/member/phanvanh18">PhanVanh18</a></li>
+                <li><img src="https://img.tapimg.net/market/icons/6eec2753e35ac1761375fce36a61ed20_360.png?imageMogr2/thumbnail/1080x9999%3E/quality/80/format/jpg/interlace/1/ignore-error/1&t=1"
+                        alt="Icon"> <strong>TFT:</strong> <a
+                        href="https://lolchess.gg/profile/vn/L%C3%A3ng%20T%E1%BB%AD%20Bi%C3%AAn%20Ho%C3%A0-2909/set13">Lãng
+                        Tử Biên Hoà#2909</a></li>
+                <li><img src="https://cdn2.steamgriddb.com/icon/e1bd06c3f8089e7552aa0552cb387c92/32/512x512.png"
+                        alt="Icon"> <strong>CS2:</strong> <a
+                        href="https://steamcommunity.com/id/pvathedeath/">Kn1ghT</a></li>
             </ul>
         </section>
         <section class="section" id="concac">
             <h2>Lời tâm sự nho nhỏ</h2>
-            <p>Tôi rất vui khi bạn đã nhấn vào cái link tôi để ở bio fb, vì đây là những gì tôi muốn giới thiệu với bạn trước khi bạn làm quen tôi</p>
-            <p>Nói về mảng âm nhạc thì tôi thích nhạc của <a href="https://vietcetera.com/vn/hustlang-robe-ban-linh-va-trach-nhiem-cua-mot-thuyen-truong" target="_blank">Hustlang Robber</a> vì nhạc ổng đã truyền cảm hứng cho tôi tiếp tục sống đến giờ</p>
+            <p>Tôi rất vui khi bạn đã nhấn vào cái link tôi để ở bio fb, vì đây là những gì tôi muốn giới thiệu với bạn
+                trước khi bạn làm quen tôi</p>
+            <p>Nói về mảng âm nhạc thì tôi thích nhạc của <a
+                    href="https://vietcetera.com/vn/hustlang-robe-ban-linh-va-trach-nhiem-cua-mot-thuyen-truong"
+                    target="_blank">Hustlang Robber</a> vì nhạc ổng đã truyền cảm hứng cho tôi tiếp tục sống đến giờ</p>
             <p>--------------------------------------------------------</p>
-            <p>Tôi đôi lúc sẽ cọc tính, nói năng vô cớ, mồm đi chơi hơi xa, như "đến tháng" vậy, bạn thông cảm cho tôi nhé</p>
+            <p>Tôi đôi lúc sẽ cọc tính, nói năng vô cớ, mồm đi chơi hơi xa, như "đến tháng" vậy, bạn thông cảm cho tôi
+                nhé</p>
             <p>--------------------------------------------------------</p>
             <p>Tính tôi dễ gần, có lối sống tích cực, nên rất thoải mái với mọi người</p>
             <p>Tuy là vậy nhưng tôi vẫn có những lúc tiêu cực, suy sụp, thoái hoá tinh thần</p>
             <p>Nhưng tôi có thể tự an ủi bản thân được, nếu bạn muốn an ủi tôi thì tôi cũng sẽ nghe >///< </p>
-            <p>Trong trường hợp bạn buồn vì một chuyện gì đó, thì có thể nói với tôi, tôi sẽ an ủi bạn nhé</p>
-            <p>--------------------------------------------------------</p>
-            <p>Tạm chỉ có thế thôi tại tôi bí quá nên nói ra những gì tôi đang gặp phải thôi nên cảm ơn bạn đã đọc</p>
-            <p>Chúc bạn có khoảng thời gian vui vẻ khi nói chuyện với tôi</p>
+                    <p>Trong trường hợp bạn buồn vì một chuyện gì đó, thì có thể nói với tôi, tôi sẽ an ủi bạn nhé</p>
+                    <p>--------------------------------------------------------</p>
+                    <p>Tạm chỉ có thế thôi tại tôi bí quá nên nói ra những gì tôi đang gặp phải thôi nên cảm ơn bạn đã
+                        đọc</p>
+                    <p>Chúc bạn có khoảng thời gian vui vẻ khi nói chuyện với tôi</p>
         </section>
     </div>
     <footer>
-        <p>Phan Việt Anh đã viết web này vào 25/3/2025.</p>
+        <p><b>Phan Việt Anh đã viết web này vào 25/3/2025.</b></p>
     </footer>
-
 </body>
+
+<script>
+    var video = document.getElementById("myVideo");
+</script>
+
 </html>
