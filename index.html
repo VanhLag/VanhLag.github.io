@@ -11,8 +11,9 @@
             position: fixed;
             right: 0;
             bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
+            width: 100vw; /* Đảm bảo video chiếm toàn bộ chiều rộng màn hình */
+            height: 100vh; /* Đảm bảo video chiếm toàn bộ chiều cao màn hình */
+            object-fit: cover; /* Giữ video đầy đủ màn hình mà không bị biến dạng */
             z-index: -1;
         }
 
@@ -174,7 +175,7 @@
 </head>
 
 <body>
-    <video autoplay muted loop id="myVideo">
+    <video autoplay muted loop playsinline id="myVideo">
         <source src="pva.mp4" type="video/mp4">
     </video>
     <div class="container">
@@ -240,11 +241,11 @@
             <p>Tính tôi dễ gần, có lối sống tích cực, nên rất thoải mái với mọi người</p>
             <p>Tuy là vậy nhưng tôi vẫn có những lúc tiêu cực, suy sụp, thoái hoá tinh thần</p>
             <p>Nhưng tôi có thể tự an ủi bản thân được, nếu bạn muốn an ủi tôi thì tôi cũng sẽ nghe >///< </p>
-                    <p>Trong trường hợp bạn buồn vì một chuyện gì đó, thì có thể nói với tôi, tôi sẽ an ủi bạn nhé</p>
-                    <p>--------------------------------------------------------</p>
-                    <p>Tạm chỉ có thế thôi tại tôi bí quá nên nói ra những gì tôi đang gặp phải thôi nên cảm ơn bạn đã
-                        đọc</p>
-                    <p>Chúc bạn có khoảng thời gian vui vẻ khi nói chuyện với tôi</p>
+            <p>Trong trường hợp bạn buồn vì một chuyện gì đó, thì có thể nói với tôi, tôi sẽ an ủi bạn nhé</p>
+            <p>--------------------------------------------------------</p>
+            <p>Tạm chỉ có thế thôi tại tôi bí quá nên nói ra những gì tôi đang gặp phải thôi nên cảm ơn bạn đã
+                đọc</p>
+            <p>Chúc bạn có khoảng thời gian vui vẻ khi nói chuyện với tôi</p>
         </section>
     </div>
     <footer>
