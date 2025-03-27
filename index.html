@@ -16,7 +16,11 @@
             object-fit: cover;
             z-index: -1;
             pointer-events: none;
+            visibility: hidden; 
         }
+#myVideo.playing {
+    visibility: visible;
+}
 
         * {
             margin: 0;
@@ -256,15 +260,16 @@
 </body>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("load", function() {
         var video = document.getElementById("myVideo");
-        if (video) {
-            video.play().catch(function (error) {
-                console.log("Autoplay failed: ", error);
-            });
-        }
+        video.play().then(function() {
+            video.classList.add('playing');
+        }).catch(function(error) {
+            console.log("Autoplay failed:", error);
+        });
     });
 </script>
+
 
 
 </html>
