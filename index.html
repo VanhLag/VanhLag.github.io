@@ -258,8 +258,13 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var video = document.getElementById("myVideo");
-        video.play();
+        if (video) {
+            video.play().catch(function (error) {
+                console.log("Autoplay failed: ", error);
+            });
+        }
     });
 </script>
+
 
 </html>
