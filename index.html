@@ -15,6 +15,7 @@
             height: 100vh;
             object-fit: cover;
             z-index: -1;
+            pointer-events: none;
         }
 
         * {
@@ -241,12 +242,12 @@
             <p>Tính tôi dễ gần, có lối sống tích cực, nên rất thoải mái với mọi người</p>
             <p>Tuy là vậy nhưng tôi vẫn có những lúc tiêu cực, suy sụp, thoái hoá tinh thần</p>
             <p>Nhưng tôi có thể tự an ủi bản thân được, nếu bạn muốn an ủi tôi thì tôi cũng sẽ nghe >///< </p>
-            <p>Trong trường hợp bạn buồn vì một chuyện gì đó, thì có thể nói với tôi, tôi sẽ an ủi bạn nhé</p>
-            <p>--------------------------------------------------------</p>
-            <p>Tạm chỉ có thế thôi tại tôi bí quá nên nói ra những gì tôi đang gặp phải thôi nên cảm ơn bạn đã
-                đọc</p>
-            <p>Chúc bạn có khoảng thời gian vui vẻ khi nói chuyện với tôi</p>
-				<p>P/S : Nếu bạn là gái aov thì tôi khuyên thật rằng bạn đi chết mẹ đi</p>
+                    <p>Trong trường hợp bạn buồn vì một chuyện gì đó, thì có thể nói với tôi, tôi sẽ an ủi bạn nhé</p>
+                    <p>--------------------------------------------------------</p>
+                    <p>Tạm chỉ có thế thôi tại tôi bí quá nên nói ra những gì tôi đang gặp phải thôi nên cảm ơn bạn đã
+                        đọc</p>
+                    <p>Chúc bạn có khoảng thời gian vui vẻ khi nói chuyện với tôi</p>
+                    <p>P/S : Nếu bạn là gái aov thì tôi khuyên thật rằng bạn đi chết mẹ đi</p>
         </section>
     </div>
     <footer>
@@ -255,7 +256,10 @@
 </body>
 
 <script>
-    var video = document.getElementById("myVideo");
+    document.addEventListener("DOMContentLoaded", function () {
+        var video = document.getElementById("myVideo");
+        video.play();
+    });
 </script>
 
 </html>
