@@ -37,4 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(targetId).classList.add('active');
         });
     });
+    const updateScrollButton = () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 100) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', updateScrollButton);
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+
+    updateScrollButton();
 });
