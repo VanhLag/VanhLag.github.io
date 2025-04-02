@@ -1,137 +1,122 @@
-/* --- Header Styles --- */
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 header {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-    padding: 15px 0; /* Vertical padding */
-    position: fixed; /* Makes header stay at the top */
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width */
-    z-index: 100; /* Ensures header is above the video background */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional subtle shadow */
-    transition: background-color 0.3s ease; /* Smooth transition effect */
+
 }
-
-/* Optional: Change background on scroll */
-/* header.scrolled { 
-    background-color: rgba(255, 255, 255, 0.95); 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
-} */
-
-.header-container {
-    width: 80%; /* Consistent width with .content/.container */
-    max-width: 1200px; /* Allow header content to be a bit wider if needed */
-    margin: 0 auto; /* Center the container */
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Pushes logo left, nav right */
-    align-items: center; /* Vertically align items */
-}
-
-.logo a {
-    color: #333; /* Darker color for logo text */
-    font-size: 1.8em; /* Larger font size */
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.logo img { /* If using an image logo */
-    height: 40px; /* Adjust height as needed */
-    width: auto;
-    display: block; /* Prevents extra space below image */
-}
-
-.navbar ul {
-    list-style: none; /* Removes bullet points */
-    display: flex; /* Arrange nav items horizontally */
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
-}
-
-.navbar li {
-    margin-left: 25px; /* Spacing between nav items */
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #4d7cda; /* Use theme color */
-    font-weight: bold;
-    padding: 5px 10px; /* Add some padding for easier clicking */
-    border-radius: 4px; /* Slightly rounded corners for links */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
-}
-
-.navbar a:hover,
-.navbar a.active { /* Style for hover and potentially active link */
-    color: #fff; /* White text on hover/active */
-    background-color: #4d7cda; /* Theme color background */
-}
-
-/* --- Adjustments for Body due to Fixed Header --- */
 body {
-    padding-top: 80px; /* Add padding to the top of the body to prevent content from hiding behind the fixed header. Adjust this value based on your header's actual height. */
-    /* Keep existing body styles */
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    position: relative;
-    overflow-x: hidden;
+font-family: Arial, sans-serif;
+line-height: 1.6;
+position: relative;
+overflow-x: hidden;
 }
 
+#video {
+position: fixed;
+right: 0;
+bottom: 0;
+width: 100vw;
+height: 100vh;
+object-fit: cover;
+z-index: -1;
+}
 
-/* --- Responsive Adjustments for Header --- */
+@keyframes fadeInOverlay {
+to { opacity: 1; }
+}
+
+.content, .container {
+width: 80%;
+max-width: 800px;
+margin: 20px auto;
+padding: 20px;
+background-color: rgba(255, 255, 255, 0.473);
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+border-radius: 8px;
+opacity: 0;
+display: none;
+animation: fadeIn 1s forwards;
+}
+
+.content {
+width: 40%;
+text-align: center;
+}
+
+@keyframes fadeIn {
+to { opacity: 1; transform: translateY(0); }
+}
+.section {
+margin-bottom: 20px;
+display: none;
+}
+
+.section.active {
+display: block;
+}
+
+.section h2 {
+color: #4d7cda;
+margin-bottom: 15px;
+}
+
+.section ul {
+list-style: none;
+}
+
+.section ul li {
+display: flex;
+align-items: center;
+padding: 8px 0;
+}
+
+.section ul li img {
+width: 30px;
+height: 30px;
+margin-right: 10px;
+}
+
+.section a {
+color: #4d7cda;
+text-decoration: none;
+}
+
+.section a:hover {
+color: #4c6ba8;
+}
+
+#scrollToTopBtn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+padding: 20px;
+background-color: #4d7cda9f;
+color: white;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+z-index: 1000;
+font-size: 28px;
+width: 60px;
+height: 60px;
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 0;
+transition: opacity 0.5s ease;
+}
+
+#scrollToTopBtn.visible {
+opacity: 1;
+}
+
+#scrollToTopBtn:hover {
+background-color: #4c6ba8c9;
+}
+
 @media (max-width: 768px) {
-    .header-container {
-        width: 90%; /* Use more width on smaller screens */
-        flex-direction: column; /* Stack logo and nav vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .navbar {
-        margin-top: 10px; /* Add space between logo and nav */
-        width: 100%; /* Allow nav to take full width */
-    }
-    
-    .navbar ul {
-       justify-content: space-around; /* Space out nav items */
-       width: 100%;
-    }
-
-    .navbar li {
-        margin-left: 5px; /* Reduce spacing */
-        margin-right: 5px;
-    }
-
-    .navbar a {
-        padding: 8px 5px; /* Adjust padding */
-        font-size: 0.9em; /* Slightly smaller font */
-    }
-
-    .logo a {
-        font-size: 1.5em; /* Adjust logo size */
-    }
-
-    body {
-        padding-top: 120px; /* Adjust body padding for taller stacked header */
-    }
-    
-    /* Your existing media query */
-    .content, .container { width: 90%; }
-    /* .navbar a { padding: 8px 15px; } /* You might remove or adjust this based on the new navbar styles */
-}
-
-@media (max-width: 480px) {
-    .navbar ul {
-        flex-direction: column; /* Stack nav items vertically on very small screens */
-        align-items: flex-start; /* Align items to the start */
-    }
-    .navbar li {
-        margin-left: 0;
-        margin-bottom: 5px; /* Add space below each stacked item */
-        width: 100%; /* Make each item full width */
-    }
-    .navbar a {
-        display: block; /* Make link fill the list item */
-        text-align: center; /* Center text */
-    }
-     body {
-        padding-top: 180px; /* Adjust body padding again */
-    }
+.content, .container { width: 90%; }
+.navbar a { padding: 8px 15px; }
 }
